@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+     <ion-buttons slot="end">
+      <ion-back-button  color="success">Salir</ion-back-button >
+    </ion-buttons>
+    <ion-title>Detalles de contacto</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let contact of contacts" [routerLink]="['./',contact.id]">
+      <ion-avatar slot="start">
+        <ion-img [src]="contact.imagen"></ion-img>
+      </ion-avatar>
+      <ion-label>{{contact.nombre}}</ion-label>
+    </ion-item>
+  </ion-list>
+    <!-- fab placed to the top and end and on the top edge of the content overlapping header -->
+    <ion-fab vertical="center" horizontal="end"  slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="add" [routerLink]="['/add-contact']"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>

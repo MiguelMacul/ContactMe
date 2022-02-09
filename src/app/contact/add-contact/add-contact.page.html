@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [routerLink]="['./dashboard']"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar nuevo contacto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="usuario" (ngSubmit)="onSubmit()">
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre completo</ion-label>
+      <ion-input formControlName="nombre"  type="text" required ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Correos</ion-label>
+      <ion-input formControlName="correo" type="email" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">telefonos</ion-label>
+      <ion-input formControlName="telefono" type="number" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Fecha de nacimiento</ion-label>
+      <ion-input formControlName="fechanacimiento" type="date" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Registrar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
